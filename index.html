@@ -32,17 +32,18 @@ a{text-decoration:none;color:inherit}
   padding:12px 28px;
   border-radius:999px;
   font-weight:600;
-  display:inline-block;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
   box-shadow:0 8px 20px rgba(0,0,0,.15);
-  margin:6px;
 }
 
-/* ================= NAVBAR ================= */
+/* ================= HEADER / NAVBAR ================= */
 .navbar{
   position:sticky;
   top:0;
   z-index:100;
-  background:rgba(255,247,204,.95);
+  background:rgba(255,247,204,.96);
   backdrop-filter:blur(10px);
   box-shadow:0 6px 20px rgba(0,0,0,.12);
 }
@@ -92,6 +93,7 @@ header{
   background:linear-gradient(135deg,#fff1a8,#e6bb0e,#9e6707);
   padding:80px 0;
 }
+
 .hero{
   display:flex;
   align-items:center;
@@ -100,9 +102,11 @@ header{
 .hero-text{flex:1}
 .hero-text h1{font-size:2.4rem}
 .hero-text p{margin:14px 0 24px}
+
 .hero-img{flex:1;text-align:center}
 .hero-img img{
-  width:400px;max-width:100%;
+  width:400px;
+  max-width:100%;
   border-radius:26px;
   box-shadow:0 20px 45px rgba(0,0,0,.3);
 }
@@ -123,7 +127,7 @@ h2{text-align:center;margin-bottom:30px;color:#b45309}
 }
 .highlight{border-left:6px solid var(--primary)}
 
-/* TESTIMONIALS */
+/* ================= TESTIMONIALS ================= */
 .testimonial-wrapper{max-width:720px;margin:auto}
 .testimonial-card{
   display:none;
@@ -131,10 +135,11 @@ h2{text-align:center;margin-bottom:30px;color:#b45309}
   padding:28px;
   border-radius:20px;
   text-align:center;
+  box-shadow:0 12px 30px rgba(0,0,0,.15);
 }
 .testimonial-card.active{display:block}
 
-/* FAQ */
+/* ================= FAQ ================= */
 .faq details{
   background:#fff8dc;
   padding:16px;
@@ -142,24 +147,45 @@ h2{text-align:center;margin-bottom:30px;color:#b45309}
   margin:10px 0;
 }
 
-/* WHATSAPP */
+/* ================= WHATSAPP FLOAT ================= */
 .wa-sticky{
   position:fixed;
   right:18px;
   bottom:22px;
   background:#25D366;
   color:#fff;
-  padding:14px 18px;
-  border-radius:999px;
-  font-weight:600;
-  z-index:99;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+  z-index:10;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 footer{
   background:linear-gradient(135deg,#facc15,#f59e0b);
+  color:#000;
   text-align:center;
   padding:32px 0;
+}
+footer p{margin:6px 0}
+
+.social-links{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-bottom:10px;
+}
+.social-links a{
+  font-size:22px;
+  color:#000;
+  background:#fff;
+  padding:10px;
+  border-radius:50%;
+  box-shadow:0 8px 25px rgba(0,0,0,.15);
 }
 
 @media(max-width:768px){
@@ -171,7 +197,7 @@ footer{
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<!-- ================= HEADER ================= -->
 <nav class="navbar">
   <div class="container nav-wrap">
     <div class="logo">NEET <span>with Shivam</span></div>
@@ -185,16 +211,20 @@ footer{
   </div>
 </nav>
 
-<a class="wa-sticky" onclick="openWhatsApp()">WhatsApp</a>
+<!-- WHATSAPP FLOAT -->
+<a class="wa-sticky" onclick="openWhatsApp()">
+  <i class="fab fa-whatsapp"></i>
+</a>
 
-<!-- ================= HERO ================= -->
 <header>
   <div class="container hero">
     <div class="hero-text">
       <h1>NEET Mentorship with Shivam</h1>
       <p>From NEET Aspirant to MBBS — clear strategy, honest guidance & personal mentorship.</p>
       <a href="#apply" class="btn">Apply Now</a>
-      <a onclick="openWhatsApp()" class="btn">Talk to Mentor</a>
+      <a onclick="openWhatsApp()" class="btn">
+        <i class="fab fa-whatsapp"></i> Talk to Mentor
+      </a>
     </div>
     <div class="hero-img">
       <img src="shivam.jpeg" alt="Mentor Shivam">
@@ -228,10 +258,41 @@ No fake motivation — only practical planning, honest feedback and discipline.
 <h2>What You’ll Get</h2>
 <div class="grid">
   <div class="card">Personal Study Plan</div>
-  <div class="card">Mock Analysis</div>
+  <div class="card">Mock Test Analysis</div>
   <div class="card">Counselling Support</div>
-  <div class="card">1-to-1 Doubts</div>
+  <div class="card">1-to-1 Doubt Help</div>
+  <div class="card">Weekly Targets</div>
+  <div class="card">Consistency & Motivation</div>
 </div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2>Student Reviews</h2>
+<div class="testimonial-wrapper">
+  <div class="testimonial-card active">
+    <p>“Mentorship se meri preparation organised ho gayi.”</p>
+    <h4>Aman Kumar</h4><span>NEET Dropper</span>
+  </div>
+  <div class="testimonial-card">
+    <p>“Personal attention sabse best part hai.”</p>
+    <h4>Riya Singh</h4><span>NEET 2026</span>
+  </div>
+  <div class="testimonial-card">
+    <p>“Honest guidance, no fake promises.”</p>
+    <h4>Rahul Verma</h4><span>NEET 2025</span>
+  </div>
+</div>
+</div>
+</section>
+
+<section class="faq">
+<div class="container">
+<h2>FAQs</h2>
+<details><summary>Who can apply?</summary><p>NEET aspirants & droppers.</p></details>
+<details><summary>Is this personal mentorship?</summary><p>Yes, limited students only.</p></details>
+<details><summary>Is counselling included?</summary><p>Yes.</p></details>
 </div>
 </section>
 
@@ -243,9 +304,19 @@ No fake motivation — only practical planning, honest feedback and discipline.
 </section>
 
 <footer>
+<div class="social-links">
+  <a href="https://instagram.com/neetwithshivam" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://youtube.com/@neetwithshivam" target="_blank"><i class="fab fa-youtube"></i></a>
+  <a href="https://t.me/neetwithshivam" target="_blank"><i class="fab fa-telegram"></i></a>
+  <a href="https://linkedin.com/in/neetwithshivam" target="_blank"><i class="fab fa-linkedin"></i></a>
+</div>
+
+<div class="container">
 <p><b>NEET Mentorship with Shivam</b></p>
 <p>📞 WhatsApp: +91 6299717362</p>
-<p style="font-size:.85rem">© 2026 All rights reserved</p>
+<p>📩 Email: surya286351@gmail.com</p>
+<p style="font-size:.85rem;opacity:.85">© 2026 All rights reserved.</p>
+</div>
 </footer>
 
 <script>
@@ -255,15 +326,22 @@ const WHATSAPP_NUMBER="916299717362";
 document.getElementById("formBtn").href=GOOGLE_FORM_URL;
 
 function openWhatsApp(){
-  const msg=encodeURIComponent("Hi Shivam bhaiya, I want guidance for NEET mentorship.");
-  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`,"_blank");
+ const msg=encodeURIComponent("Hi Shivam bhaiya, I want guidance for NEET mentorship.");
+ window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`,"_blank");
 }
 
 function toggleMenu(){
-  document.querySelector(".nav-links").classList.toggle("active");
+ document.querySelector(".nav-links").classList.toggle("active");
 }
 
-/* Testimonials auto (future ready) */
+/* TESTIMONIAL AUTO SLIDE */
+let tIndex=0;
+const cards=document.querySelectorAll(".testimonial-card");
+setInterval(()=>{
+ cards[tIndex].classList.remove("active");
+ tIndex=(tIndex+1)%cards.length;
+ cards[tIndex].classList.add("active");
+},3500);
 </script>
 
 </body>
