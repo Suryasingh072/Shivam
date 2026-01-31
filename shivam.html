@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NEET Mentorship with Shivam | Personal Guidance</title>
+<meta name="description" content="Personal NEET mentorship with Shivam. Strategy, mock analysis, counselling & 1-to-1 guidance for NEET aspirants.">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+  --bg:#fffdf5;
+  --text:#2b2b2b;
+  --card:#ffffff;
+  --primary:#f8d36e;
+  --primary-dark:#f9a719;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Poppins,sans-serif;
+}
+
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+}
+
+a{text-decoration:none}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:0 16px;
+}
+
+.btn{
+  background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+  color:#000;
+  padding:12px 28px;
+  border-radius:999px;
+  font-weight:600;
+  display:inline-block;
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+/* HEADER */
+header{
+  background:linear-gradient(135deg,#fff1a8,#e6bb0e,#9e6707);
+  padding:80px 0;
+}
+
+.hero{
+  display:flex;
+  align-items:center;
+  gap:40px;
+}
+
+.hero-text{flex:1}
+
+.hero-text h1{
+  font-size:2.4rem;
+  color:#000;
+}
+
+.hero-text p{
+  margin:14px 0 24px;
+  font-size:1.05rem;
+}
+
+.hero-img{
+  flex:1;
+  text-align:center;
+}
+
+.hero-img img{
+  width:400px;
+  max-width:100%;
+  border-radius:26px;
+  box-shadow:0 20px 45px rgba(0,0,0,.3);
+}
+
+/* SECTIONS */
+section{padding:60px 0}
+
+h2{
+  text-align:center;
+  margin-bottom:30px;
+  color:#b45309;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:var(--card);
+  padding:22px;
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.highlight{
+  border-left:6px solid var(--primary);
+}
+
+/* TESTIMONIALS */
+.testimonial-wrapper{
+  max-width:720px;
+  margin:auto;
+}
+
+.testimonial-card{
+  display:none;
+  background:linear-gradient(135deg,#fff7cc,#fff1a8);
+  padding:28px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 12px 30px rgba(0,0,0,.15);
+}
+
+.testimonial-card.active{display:block}
+
+.testimonial-card h4{
+  margin-top:14px;
+  color:#92400e;
+}
+
+.testimonial-card span{
+  font-size:.9rem;
+  opacity:.85;
+}
+
+/* FAQ */
+.faq details{
+  background:#fff8dc;
+  padding:16px;
+  border-radius:14px;
+  margin:10px 0;
+}
+
+.faq summary{
+  cursor:pointer;
+  font-weight:600;
+}
+
+/* STICKY WHATSAPP */
+.wa-sticky{
+  position:fixed;
+  right:18px;
+  bottom:22px;
+  z-index:10;
+  background:#25D366;
+  color:#fff;
+  padding:14px 18px;
+  border-radius:999px;
+  font-weight:600;
+}
+
+/* MOBILE CTA */
+.mobile-cta{
+  display:none;
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  background:#fff7cc;
+  padding:10px;
+  border-top:1px solid #facc15;
+  z-index:9;
+}
+
+.mobile-cta .btn{
+  width:100%;
+  text-align:center;
+}
+
+/* FOOTER */
+footer{
+  background:linear-gradient(135deg,#facc15,#f59e0b);
+  color:#000;
+  text-align:center;
+  padding:32px 0;
+}
+
+footer p{margin:6px 0}
+
+/* SOCIAL ICONS */
+.social-links{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-bottom:10px;
+}
+
+.social-links a{
+  font-size:22px;
+  color:#000;
+  background:#fff;
+  padding:10px;
+  border-radius:50%;
+  box-shadow:0 8px 25px rgba(0,0,0,.15);
+  transition:.3s;
+}
+
+.social-links a:hover{
+  transform:translateY(-4px) scale(1.05);
+  background:#facc15;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero{
+    flex-direction:column-reverse;
+    text-align:center;
+  }
+  .hero-text h1{font-size:2rem}
+  .mobile-cta{display:block}
+  body{padding-bottom:70px}
+}
+</style>
+</head>
+
+<body>
+
+<a class="wa-sticky" onclick="openWhatsApp()">WhatsApp</a>
+
+<header>
+  <div class="container hero">
+    <div class="hero-text">
+      <h1>NEET Mentorship with Shivam</h1>
+      <p>
+        From NEET Aspirant to MBBS — clear strategy, honest guidance
+        & personal mentorship for serious NEET students.
+      </p>
+      <a href="#apply" class="btn">Apply Now</a>
+      <a onclick="openWhatsApp()" class="btn">Talk to Mentor</a>
+    </div>
+
+    <div class="hero-img">
+      <img src="shivam.jpeg" alt="Mentor Shivam">
+    </div>
+  </div>
+</header>
+
+<section>
+<div class="container">
+<h2>Why Students Struggle?</h2>
+<div class="grid">
+  <div class="card">Mock scores stuck</div>
+  <div class="card">No daily strategy</div>
+  <div class="card">Drop confusion</div>
+  <div class="card">Counselling doubt</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2>Meet Your Mentor – Shivam</h2>
+<div class="card highlight">
+Shivam has experienced the NEET journey himself.
+No fake motivation — only practical planning,
+honest feedback and discipline.
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2>What You’ll Get</h2>
+<div class="grid">
+  <div class="card">Personal Study Plan</div>
+  <div class="card">Mock Test Analysis</div>
+  <div class="card">Counselling Support</div>
+  <div class="card">1-to-1 Doubt Help</div>
+  <div class="card">Weekly Targets</div>
+  <div class="card">Consistency & Motivation</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2>Student Reviews</h2>
+<div class="testimonial-wrapper">
+  <div class="testimonial-card active">
+    <p>“Mentorship se meri preparation organised ho gayi.”</p>
+    <h4>Aman Kumar</h4><span>NEET Dropper</span>
+  </div>
+  <div class="testimonial-card">
+    <p>“Personal attention sabse best part hai.”</p>
+    <h4>Riya Singh</h4><span>NEET 2026</span>
+  </div>
+  <div class="testimonial-card">
+    <p>“Honest guidance, no fake promises.”</p>
+    <h4>Rahul Verma</h4><span>NEET 2025</span>
+  </div>
+</div>
+</div>
+</section>
+
+<section class="faq">
+<div class="container">
+<h2>FAQs</h2>
+<details><summary>Who can apply?</summary><p>NEET aspirants & droppers.</p></details>
+<details><summary>Is this personal mentorship?</summary><p>Yes, limited students only.</p></details>
+<details><summary>Is counselling included?</summary><p>Yes.</p></details>
+</div>
+</section>
+
+<section id="apply">
+<div class="container" style="text-align:center">
+<h2>Apply for Mentorship</h2>
+<p>Limited seats to ensure personal attention.</p>
+<a id="formBtn" class="btn" target="_blank">Fill Google Form</a>
+</div>
+</section>
+
+<footer>
+<div class="social-links">
+  <a href="https://instagram.com/neetwithshivam" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://youtube.com/@neetwithshivam" target="_blank"><i class="fab fa-youtube"></i></a>
+  <a href="https://t.me/neetwithshivam" target="_blank"><i class="fab fa-telegram"></i></a>
+  <a href="https://linkedin.com/in/neetwithshivam" target="_blank"><i class="fab fa-linkedin"></i></a>
+</div>
+
+<div class="container">
+<p><b>NEET Mentorship with Shivam</b></p>
+<p>Focused NEET mentorship for students who want clarity, discipline and the right direction.</p>
+<p>📞 WhatsApp: +91 9431683881</p>
+<p>📩 Email: surya286351@gmail.com</p>
+<p style="font-size:.85rem;opacity:.85">© 2026 NEET Mentorship with Shivam. All rights reserved.</p>
+</div>
+</footer>
+
+<div class="mobile-cta">
+<a href="#apply" class="btn">Apply for Mentorship</a>
+</div>
+
+<script>
+const GOOGLE_FORM_URL="https://forms.gle/XXXX";
+const WHATSAPP_NUMBER="919431683881";
+
+document.getElementById("formBtn").href=GOOGLE_FORM_URL;
+
+function openWhatsApp(){
+ const msg=encodeURIComponent(
+  "Hi Shivam bhaiya, I want guidance for NEET mentorship."
+ );
+ window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`,"_blank");
+}
+
+/* Testimonial Slider */
+let tIndex=0;
+const cards=document.querySelectorAll(".testimonial-card");
+setInterval(()=>{
+ cards[tIndex].classList.remove("active");
+ tIndex=(tIndex+1)%cards.length;
+ cards[tIndex].classList.add("active");
+},3500);
+</script>
+
+</body>
+</html>
